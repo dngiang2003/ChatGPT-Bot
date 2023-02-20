@@ -17,3 +17,23 @@ vi?t nam c� bao nhi�u t?nh, Vi?t Nam c� 64 t?nh, th�nh ph? tr?c thu?c trung uong
 23 + 12 = ?, 35
 45 - 12 = ?, 33
 Việt Nam có bao nhiêu tỉnh thành?, Việt Nam có 63 tỉnh thành.
+1 + 4 = ?, Vui lòng kiểm tra lại API Key!
+xin chao, Vui lòng kiểm tra lại API Key!
+xin chao, Xin chao!
+write me a function to check prime number c++, // Function to check if a positive number is prime or not 
+bool isPrime(int n) 
+{ 
+    // Corner cases 
+    if (n <= 1)  return false; 
+    if (n <= 3)  return true; 
+  
+    // This is checked so that we can skip  
+    // middle five numbers in below loop 
+    if (n%2 == 0 || n%3 == 0) return false; 
+  
+    for (int i=5; i*i<=n; i=i+6) 
+        if (n%i == 0 || n%(i+2) == 0) 
+           return false; 
+  
+    return true; 
+}

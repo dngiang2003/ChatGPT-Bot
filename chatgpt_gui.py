@@ -73,7 +73,7 @@ def askChatGPT():
             response = openai.Completion.create(
                 engine='text-davinci-003',
                 prompt=prompt,
-                max_tokens=4000)
+                max_tokens=555)
             message = response.choices[0].text.strip()
         except:
             message = 'Vui lòng kiểm tra lại API Key!'
@@ -89,7 +89,7 @@ def updateAPI():
         rootAPI.destroy()
 
     def confirm():
-        with open(r'data\APIChatGPT.txt', 'a+', encoding='utf-8') as wf:
+        with open(r'data\APIChatGPT.txt', 'w', encoding='utf-8') as wf:
             wf.write(entryAPI.get().strip())
         wf.close()
         cancel()
@@ -109,16 +109,14 @@ def updateAPI():
     rootAPI.resizable(False, False)
     rootAPI.attributes('-topmost', True)
 
-    entryAPI = CTkEntry(master=rootAPI,
-                                      placeholder_text=' Please enter the ChatGPT API',
+    entryAPI = CTkEntry(master=rootAPI, placeholder_text=' Please enter the ChatGPT API',
                                       width=340,
                                       height=35,
                                       border_width=2,
                                       corner_radius=5)
     entryAPI.pack(side='top', padx=10, pady=20)
 
-    btnUpdateTrue = CTkButton(master=rootAPI,
-                                            width=140,
+    btnUpdateTrue = CTkButton(master=rootAPI, width=140,
                                             height=35,
                                             border_width=0,
                                             corner_radius=6,
@@ -128,8 +126,7 @@ def updateAPI():
                                             command=confirm)
     btnUpdateTrue.place(x=25, y=80)
 
-    btnUpdateFalse = CTkButton(master=rootAPI,
-                                            width=140,
+    btnUpdateFalse = CTkButton(master=rootAPI, width=140,
                                             height=35,
                                             border_width=0,
                                             fg_color='#1ba164',
@@ -170,8 +167,7 @@ buttonClear = CTkButton(master=root, width=135,
                                     command=clearText)
 buttonClear.place(x=208, y=510)
 
-buttonUpdateAPI = CTkButton(master=root,
-                                        width=135,
+buttonUpdateAPI = CTkButton(master=root, width=135,
                                         height=35,
                                         border_width=0,
                                         fg_color='#1ba164',
